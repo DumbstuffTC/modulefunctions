@@ -26,13 +26,18 @@ index.ClrGame = function()
 			v:Destroy()
 		end		
 	end
-	wait(3)
+	wait(.2)
 	local bsp = Instance.new("Part",workspace)
 	bsp.Name = "Baseplate"
 	bsp.Anchored = true
 	bsp.Size = Vector3.new(512,20,512)
 	bsp.Position = Vector3.new(0, -10, 0)
 	bsp.CanCollide = true
+	bsp.Color = Color3.fromRGB(99,95,98)
+	for i,v in pairs(game.Players:GetPlayers()) do
+		--Respawns everyone
+		v:LoadCharacter()
+	end
 end
 
 return index
